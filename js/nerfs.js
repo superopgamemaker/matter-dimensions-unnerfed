@@ -15,7 +15,7 @@ function update_challenges_power() {
     // g12: more production is protected
     if (player.upgrades['g12'].is_active()) player.challenge_addinfo_2 = player.upgrades['g12'].get_effect();
     
-    player.challenge_strength_2 = 1;
+    player.challenge_strength_2 = 0.2;
     // g11: power is increased base on unspent Gravitons
     player.challenge_strength_2 = player.upgrades['g11'].get_effect().toInt();
 
