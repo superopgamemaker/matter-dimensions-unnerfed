@@ -68,7 +68,7 @@ function update_challenges_power() {
     adj_time_passed /= power_population_time().toInt();
 
     player.challenge_strength_7 = new BigNumber(1);
-    player.challenge_strength_7 = player.challenge_strength_7.pow(Math.pow((adj_time_passed / 1000) + 1, 0.5) * Math.pow(2, adj_time_passed / 60000) - 1);
+    player.challenge_strength_7 = player.challenge_strength_7.pow(Math.pow((adj_time_passed / 1000) + 1, 0.5) * Math.pow(1, adj_time_passed / 60000) - 1);
 
     player.challenge_strength_8 = 100;
 
