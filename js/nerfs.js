@@ -1,5 +1,5 @@
 function update_challenges_power() {
-    player.challenge_strength_1 = 256;//1000;
+    player.challenge_strength_1 = 1;//1000;
     // Photonic Challenge 7: time is 256x slower
     if (player.challenges['p7'].inC()) player.challenge_strength_1 *= 256;
     // p11: time is faster
@@ -19,11 +19,11 @@ function update_challenges_power() {
     // g11: power is increased base on unspent Gravitons
     player.challenge_strength_2 = player.upgrades['g11'].get_effect().toInt();
 
-    player.challenge_strength_3 = 100;
+    player.challenge_strength_3 = 1;
     // n02: slowdown of higher-tier dimensions is reduced
     player.challenge_strength_3 = player.upgrades['n02'].get_effect().toInt();
 
-    player.challenge_strength_4 = new BigNumber(1e10);
+    player.challenge_strength_4 = new BigNumber(1e100);
     // achievement 42: you can store 2 times more resources
     if (player.achievements['42'].complete) player.challenge_strength_4 = player.challenge_strength_4.mult(2);
     // achievement 91: you can store 1e10 times more resources
@@ -47,7 +47,7 @@ function update_challenges_power() {
     // v211: BREAK INFINITY
     if (player.upgrades['v211'].is_active()) player.challenge_strength_4 = player.upgrades['v211'].get_effect();
 
-    let nerf_5_power = big(0.5);
+    let nerf_5_power = big(1);
     // a01: reduce nerf 5 power
     nerf_5_power = player.upgrades['a01'].get_effect();
 
